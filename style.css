@@ -16,12 +16,18 @@
   
 }
 
-#div{
+#div1{
     display: flex;
     display: flex;
 }
 
 #input1{
+    border-color: black;
+    border-radius: 10px;
+
+}
+
+#input2{
     border-color: black;
     border-radius: 10px;
 
