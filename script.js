@@ -13,11 +13,24 @@ const list = document.getElementById("list");
 function renderList() {
   list.innerHTML = "";
 
-  for (let i = 0; i < books.length; i++) {
+  for (let i = 0; i < movielist.length; i++) {
     const li = document.createElement("li");
-    li.textContent = books[i].title + " by " + books[i].author;
+    li.textContent = movielist[i].title + " released " + movielist[i].year;
     list.appendChild(li);
   }
 }
 
 renderList();
+
+btn1.addEventListener
+form1.addEventListener("submit", function(event){
+    event.preventDefault()
+    console.log("Form submitted!")
+    let formData = new FormData(form1)
+
+    let data = {
+        movielist: formData.get("input1"),
+        year: formData.get("input2"),
+    }
+    console.log(data)
+})
