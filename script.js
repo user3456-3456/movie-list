@@ -23,14 +23,20 @@ function renderList() {
 renderList();
 
 btn1.addEventListener
-form1.addEventListener("submit", function(event){
-    event.preventDefault()
-    console.log("Form submitted!")
-    let formData = new FormData(form1)
+form1.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    let data = {
-        movielist: formData.get("input1"),
-        year: formData.get("input2"),
-    }
-    console.log(data)
-})
+  const formData = new FormData(form1);
+  const title = formData.get("title").trim();
+  const year = formData.get("year").trim();
+
+  if (title === "" || year === "") {
+    return;
+  }
+
+  const newMovie = { title: title, year: year };
+  movielist.push(newMovie);
+
+  renderList();
+  form1.reset();
+});
